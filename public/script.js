@@ -4,12 +4,11 @@
   var input = document.querySelector('#m');
   form.addEventListener('submit', function(event){
     event.preventDefault();
-    socket.emit('chat message', input.value);
-    input.value = '';
-    return false;
+    socket.emit('chat message', input.value); //connect value to this name
+    input.value = '';//Clear input
   });
 
-  socket.on('chat message', function(msg){
+  socket.on('chat message', function(msg){ //'chat message' is msg
     var newElement = document.createElement('li');
     var newMessage = document.createTextNode(msg);
     newElement.appendChild(newMessage);
