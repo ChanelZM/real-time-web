@@ -1,9 +1,12 @@
 var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var Server = require('http').Server;
+var socketio = require('socket.io');
 var ejs = require('ejs');
 var path = require('path');
+
+var app = express();
+var server = Server(app);
+var io = socketio(http);
 
 //Express setup
 app.use(express.static(path.join(__dirname, 'public')));
