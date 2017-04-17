@@ -57,6 +57,7 @@ form button {
 
 #messages li {
   padding: 5px 10px;
+  word-break: break-all;
 }
 
 #messages li:nth-child(odd) {

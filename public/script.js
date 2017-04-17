@@ -1,3 +1,4 @@
+/* global io */
 (function(){
   var socket = io();
   var form = document.querySelector('form');
