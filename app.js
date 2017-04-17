@@ -5,7 +5,7 @@ var path = require('path');
 
 var app = express();
 var server = Server(app);
-var io = socketio(http);
+var io = socketio(server);
 
 //Express setup
 app.use(express.static(path.join(__dirname, 'public')));
@@ -25,6 +25,6 @@ io.on('connection', function(socket){
 app.set('view engine', 'ejs');
 
 //Run it, Run it
-http.listen(process.env.PORT||3001, function () {//Use the port that's default on Heroku, else use 3001
+server.listen(process.env.PORT||3001, function () {//Use the port that's default on Heroku, else use 3001
     console.log("Running at port 3001")
 });
